@@ -42,7 +42,7 @@ A full-featured e-commerce web application built with Node.js, Express, and Mong
 
    ```bash
    git clone <repo-url>
-   cd E-commerce-
+   cd E-commerce
    ```
 
 2. Install dependencies:
