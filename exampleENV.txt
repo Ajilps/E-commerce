@@ -1,0 +1,44 @@
+
+PORT = 3000
+MONGO_URI = "MONGO_URI"
+JWT_SECRET = "This is a jwt sceret key"
+JWT_EXPIRE ="24h"
+JWT_COOKIE_EXPIRE ="7d"
+
+
+SESSION_SECRET = 'This is a session secret key'
+
+
+
+# signup with google
+GOOGLE_CALLBACK_URL = '/auth/google/callback'
+GOOGLE_CLIENT_SECRECT = 'google key'
+GOOGLE_CLIENT_ID =  'client is from google'
+
+
+# email otp 
+EMAIL_HOST="smtp.gmail.com"
+EMAIL_PORT=587
+EMAIL_USER="email_id"
+# EMAIL_PASSWORD="key"
+EMAIL_PASSWORD="passkey"
+
+
+#signup with facebook
+FACEBOOK_API_ID='fb id'
+FACEBOOK_APP_SECRECT = 'fb secret '
+FACEBOOK_CALLBACK_URL = '/auth/facebook/callback'
+
+
+# cloudinary
+CLOUDINARY_API_KEY = "cloudinary key"
+CLOUDINARY_CLOUD_NAME = "name"
+CLOUDINARY_API_SECRET = "secret"
+CLOUDINARY_URL='url'
+
+
+# Razor Pay
+RAZORPAY_KEY_ID="key"
+RAZORPAY_KEY_SECRET="secret"
+
+ 
