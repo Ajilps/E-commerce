@@ -1,0 +1,22 @@
+<% var discount=(product.regularPrice && product.sellingPrice) ? Math.round(((product.regularPrice -
+  product.sellingPrice) / product.regularPrice) * 100) : (product.category && product.category.categoryOffers ?
+  product.category.categoryOffers : 0); var imgSrc=(product.productImageUrls && product.productImageUrls[0]) ?
+  product.productImageUrls[0] : '/assets/productImg/placeholder.webp' ; %>
+  <a href="/user/product/<%= product._id %>" aria-label="View <%= product.name %>">
+    <div class="product-card">
+      <img src="<%= imgSrc %>" alt="<%= product.name %>" class="product-image" loading="lazy">
+      <div class="product-info">
+        <h3 class="product-title">
+          <%= product.name %>
+        </h3>
+        <span class="text-dark fw-bold product-price">₹<%= product.sellingPrice ?
+            product.sellingPrice.toLocaleString('en-IN') : product.sellingPrice %></span>
+        <br>
+        <span class="text-decoration-line-through text-secondary">₹<%= product.regularPrice ?
+            product.regularPrice.toLocaleString('en-IN') : product.regularPrice %></span>
+        <span class="text-success">
+          <%= discount %>% off
+        </span>
+      </div>
+    </div>
+  </a>
