@@ -35,15 +35,15 @@ app.use(
     resave: false,
     saveUninitialized: false,
     cookie: { maxAge: 72 * 60 * 60 * 1000 },
-  })
+  }),
 );
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: process.env.CORS_ORIGIN || "http://localhost:3000",
     methods: "GET,POST,PUT,DELETE,PATCH",
     credentials: true,
-  })
+  }),
 );
 
 app.use(cookieParser()); // don't remove
@@ -56,18 +56,10 @@ app.use(express.static(path.resolve("public")));
 
 // Apply nocache middleware globally
 app.use(nocache());
-// app.use(helmet())
+app.use(helmet({ contentSecurityPolicy: false }));
+
 //landing page
 app.get("/", displayAllProducts);
-
-// testing the put data middleware
-
-//dev testing
-app.use((req, res, next) => {
-  console.log("\x1b[35m" + `Request Path: ${req.url}` + "\x1b[0m");
-  console.log("\x1b[36m" + `Request method: ${req.method}` + "\x1b[0m");
-  next();
-});
 
 app.get("/pageerror", (req, res) => {
   res.render("error.ejs");

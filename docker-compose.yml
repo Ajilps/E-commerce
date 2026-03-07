@@ -5,5 +5,8 @@ services:
     image: ajilps2255/e-commerce:1.0
     ports:
       - "3000:3000"
+    environment:
+      - NODE_ENV=production
     env_file:
       - .env
+    restart: unless-stopped
